@@ -169,7 +169,7 @@ class AnalyticsService {
         totalInterests: 0 // This data might not be available from the current endpoint
       };
     } catch (error) {
-      console.warn('System analytics endpoint not available, returning default data');
+      
       return {
         projects: 0,
         units: 0,
@@ -212,7 +212,7 @@ class AnalyticsService {
         }
       };
     } catch (error) {
-      console.warn('Project analytics endpoint not available, returning default data');
+      
       return {
         totalProjects: 0,
         activeProjects: 0,
@@ -256,7 +256,7 @@ class AnalyticsService {
         }
       };
     } catch (error) {
-      console.warn('Unit analytics endpoint not available, returning default data');
+      
       return {
         totalUnits: 0,
         availableUnits: 0,
@@ -319,7 +319,7 @@ class AnalyticsService {
         topUnits: Array.from(unitCounts.values()).sort((a, b) => b.favoriteCount - a.favoriteCount).slice(0, 5)
       };
     } catch (error) {
-      console.warn('Favorites analytics endpoint not available, returning default data');
+      
       return {
         totalFavorites: 0,
         projectFavorites: 0,
@@ -365,7 +365,7 @@ class AnalyticsService {
         methodBreakdown
       };
     } catch (error) {
-      console.warn('Interests analytics endpoint not available, returning default data');
+      
       return {
         totalInterests: 0,
         projectInterests: 0,

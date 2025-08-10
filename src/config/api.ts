@@ -58,13 +58,16 @@ export const API_ENDPOINTS = {
     EMPLOYEE_PERFORMANCE: 'employeedashboard/performance',
   },
   
-  // Project endpoints
+  // Project endpoints (matches API documentation)
   PROJECT: {
     LIST: 'project',
     DETAIL: (id: number) => `project/${id}`,
+    PROJECT_DETAILS: (id: number) => `project/projectdetails/${id}`,
+    LOCATIONS: 'project/locations',
     CITIES: 'project/cities',
     REGIONS: 'project/regions',
     DISTRICTS: 'project/districts',
+    CONTACT_METHODS: 'project/contactmethods',
   },
   
   // Admin Project endpoints
@@ -75,6 +78,8 @@ export const API_ENDPOINTS = {
     ADD_IMAGES: (id: number) => `admin/project/${id}/images`,
     ASSIGN_EMPLOYEES: (id: number) => `admin/project/${id}/assign-employees`,
     BULK_DELETE: 'admin/project/bulk-delete',
+    SET_FEATURED: (id: number, isFeatured: boolean) => `admin/project/${id}/set-featured?isFeatured=${isFeatured}`,
+    TOGGLE_ACTIVE: (id: number, isActive: boolean) => `admin/project/${id}/toggle-active?isActive=${isActive}`,
     EXPORT: 'admin/project/export',
   },
   

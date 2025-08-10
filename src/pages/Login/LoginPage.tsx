@@ -62,7 +62,7 @@ const LoginPage: React.FC = () => {
       // Navigation will be handled by the auth context/App component
     } catch (error) {
       // Error is already handled by the auth hook and will be shown via authError
-      console.error('Login failed:', error);
+      
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +76,7 @@ const LoginPage: React.FC = () => {
     try {
       await login(email, password);
     } catch (error) {
-      console.error('Demo login failed:', error);
+      
     } finally {
       setIsLoading(false);
     }

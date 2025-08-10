@@ -31,7 +31,7 @@ const Tasks: React.FC = () => {
           ? err.detail 
           : 'Failed to load employee data';
         setError(errorMessage);
-        console.error('Employee data fetch error:', err);
+        
       } finally {
         setIsLoading(false);
       }

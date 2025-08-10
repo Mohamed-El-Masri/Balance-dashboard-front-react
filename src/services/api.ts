@@ -14,12 +14,19 @@ export interface ApiResponse<T = any> {
 
 export interface PaginatedResponse<T = any> {
   items: T[];
-  totalItems: number;
-  totalPages: number;
-  currentPage: number;
-  pageSize: number;
-  hasNextPage: boolean;
-  hasPreviousPage: boolean;
+  totalCount?: number; // API response format
+  totalItems?: number; // Legacy format
+  totalPages?: number; // Legacy format
+  currentPage?: number;
+  pageSize?: number;
+  hasNextPage?: boolean;
+  hasPreviousPage?: boolean;
+  // إضافة الإحصائيات من الـ API
+  totalCountOfProjects?: number;
+  totalCountOfFeateredProjects?: number;
+  totalCountAssignedProjectToEmployee?: number;
+  totalCountOfActivedProjects?: number;
+  totalCountOfUnits?: number;
 }
 
 export interface ApiErrorData {
@@ -295,7 +302,6 @@ class ApiClient {
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     } catch (error) {
-      console.error('Download failed:', error);
       throw error;
     }
   }

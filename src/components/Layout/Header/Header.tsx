@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bell, ChevronDown, Globe, Settings, User, LogOut } from 'lucide-react';
 import { useAuth } from '../../../contexts/AuthContext';
+import NotificationsDropdown from '../../Notifications/NotificationsDropdown';
 import './Header.css';
 
 interface HeaderProps {
@@ -125,12 +126,15 @@ const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Notifications */}
-        <div className="notifications">
-          <button className="notification-button">
-            <Bell size={20} />
-            <span className="notification-badge">3</span>
-          </button>
-        </div>
+        <NotificationsDropdown
+          onNotificationClick={(notification) => {
+            // Handle notification navigation based on type and data
+            if (notification.data?.projectId) {
+              // Navigate to project details
+              window.location.href = `/projects/${notification.data.projectId}`;
+            }
+          }}
+        />
 
         {/* User Menu */}
         <div className="user-menu" ref={userMenuRef}>

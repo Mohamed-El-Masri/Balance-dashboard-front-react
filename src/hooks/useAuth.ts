@@ -67,7 +67,7 @@ export const useAuth = (): UseAuthReturn => {
           authService.initializeAuth();
         }
       } catch (err) {
-        console.error('Auth initialization failed:', err);
+        
         // Clear invalid auth state
         localStorage.removeItem('authToken');
         localStorage.removeItem('user');
@@ -163,7 +163,7 @@ export const useAuth = (): UseAuthReturn => {
       setIsLoading(true);
       await authService.signOut();
     } catch (err) {
-      console.error('Sign out error:', err);
+      
     } finally {
       setUser(null);
       setError(null);
@@ -195,7 +195,7 @@ export const useAuth = (): UseAuthReturn => {
         setUser(null);
       }
     } catch (err) {
-      console.error('Refresh auth error:', err);
+      
       setError('Failed to refresh authentication');
       setUser(null);
     } finally {

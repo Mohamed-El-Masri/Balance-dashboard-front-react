@@ -112,7 +112,7 @@ export const useAnalytics = (): UseAnalyticsReturn => {
         ? err.detail 
         : 'Failed to load analytics data';
       setError(errorMessage);
-      console.error('Analytics fetch error:', err);
+      
     } finally {
       setIsLoading(false);
     }

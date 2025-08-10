@@ -1,11 +1,24 @@
 /**
  * Services Index
- * Central export point for all API services
+ * Central export point for all API services with enhanced security
  */
 
 // Core API client
 export { apiClient, ApiError } from './api';
 export type { ApiResponse, PaginatedResponse, RequestOptions } from './api';
+
+// Safe API Service - Enhanced Security
+export { 
+  SafeApiService, 
+  safeApiService, 
+  safeApiCall, 
+  safeBatchCall, 
+  safePaginatedCall 
+} from './safeApiService';
+export type { 
+  SafeApiResponse, 
+  SafeApiConfig 
+} from './safeApiService';
 
 // Authentication service
 export { authService } from './authService';

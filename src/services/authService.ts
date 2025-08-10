@@ -134,7 +134,7 @@ class AuthService {
       await apiClient.post(API_ENDPOINTS.AUTH.LOGOUT);
     } catch (error) {
       // Continue with logout even if API call fails
-      console.warn('Logout API call failed:', error);
+      
     } finally {
       // Clear local storage and auth token
       localStorage.removeItem('authToken');
